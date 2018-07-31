@@ -4,4 +4,9 @@ Demo application to utilize default styles and classes on component level
 
 ## Run
 
-`npm start`
+```
+npm install
+npm start
+```
+
+serves at http://localhost:3000/
