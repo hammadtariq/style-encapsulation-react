@@ -1,8 +1,10 @@
 const DefaultStyles = {
   colors: {
-    primary: "#ded0bd",
+    primary: "#7b6092",
     warn: "#eee3d4",
-    error: "#c7b9b0"
+    error: "#c7b9b0",
+    footer: "#93bdb5",
+    header: "#28a999"
   },
   fontSize: {
     p: "16px",
