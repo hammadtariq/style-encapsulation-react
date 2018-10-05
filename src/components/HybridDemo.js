@@ -1,72 +1,44 @@
-import React, { Component } from "react";
+import React from "react";
+
+import Section from "./Section";
+import Footer from "./Footer";
+import Header from "./Header";
 
 import DefaultStyles from "../defaultStyles/styles";
 import DefaultClasses from "../defaultStyles/class";
 
-class HybridDemo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+const HybridDemo = () => {
+  const mynav = {
+    ...DefaultClasses.nav,
+    backgroundColor: DefaultStyles.colors.error
+  };
+
+  function merge() {
+    let res = {};
+    for (let i = 0; i < arguments.length; i++) {
+      if (arguments[i]) {
+        res = { ...res, ...arguments[i] };
+      }
+    }
+    return res;
   }
-  render() {
-    const mynav = {
-      ...DefaultClasses.nav,
-      backgroundColor: DefaultStyles.colors.error
-    };
-    return (
+
+  return (
+    <div>
+      <Header theme={DefaultClasses.header}> Style Encapsulation </Header>
+      <ul style={mynav}>
+        <li style={DefaultClasses.li}>home</li>
+        <li style={merge(DefaultClasses.li, DefaultClasses.liActive)}>about</li>
+        <li style={DefaultClasses.li}>contact us</li>
+      </ul>
       <div>
-        <div style={DefaultClasses.header}>Style Encapsulation</div>
-        <ul style={mynav}>
-          <li style={DefaultClasses.li}>home</li>
-          <li style={{ ...DefaultClasses.li, ...DefaultClasses.liActive }}>
-            about
-          </li>
-          <li className="item-li" style={DefaultClasses.li}>
-            contact us
-          </li>
-        </ul>
-        <div>
-          <p style={DefaultClasses.section}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam beatae
-            architecto provident, cupiditate, repellendus voluptates doloribus
-            corporis at voluptatum excepturi optio? Quam laboriosam quas rerum
-            repudiandae nihil a dicta fugiat? Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Aut doloremque asperiores, cumque rem
-            voluptatem velit distinctio ipsum deleniti corrupti esse. Magnam
-            optio atque dignissimos est labore ab eos, eius ipsum! Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Facilis consequatur ad,
-            eius dolore nesciunt cumque quia, eum omnis rem voluptates, dicta
-            quam? Fugiat id natus delectus sed sit atque molestiae.
-          </p>
-          <p style={DefaultClasses.section}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam beatae
-            architecto provident, cupiditate, repellendus voluptates doloribus
-            corporis at voluptatum excepturi optio? Quam laboriosam quas rerum
-            repudiandae nihil a dicta fugiat? Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Aut doloremque asperiores, cumque rem
-            voluptatem velit distinctio ipsum deleniti corrupti esse. Magnam
-            optio atque dignissimos est labore ab eos, eius ipsum! Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Facilis consequatur ad,
-            eius dolore nesciunt cumque quia, eum omnis rem voluptates, dicta
-            quam? Fugiat id natus delectus sed sit atque molestiae.
-          </p>
-          <p style={DefaultClasses.section}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam beatae
-            architecto provident, cupiditate, repellendus voluptates doloribus
-            corporis at voluptatum excepturi optio? Quam laboriosam quas rerum
-            repudiandae nihil a dicta fugiat? Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Aut doloremque asperiores, cumque rem
-            voluptatem velit distinctio ipsum deleniti corrupti esse. Magnam
-            optio atque dignissimos est labore ab eos, eius ipsum! Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Facilis consequatur ad,
-            eius dolore nesciunt cumque quia, eum omnis rem voluptates, dicta
-            quam? Fugiat id natus delectus sed sit atque molestiae.
-          </p>
-        </div>
-        <div style={DefaultClasses.footer}>copyrights 2018</div>
+        <Section style={DefaultClasses.section} />
+        <Section style={DefaultClasses.section} />
+        <Section style={DefaultClasses.section} />
       </div>
-    );
-  }
-}
+      <Footer theme={DefaultClasses.footer} />
+    </div>
+  );
+};
 
 export default HybridDemo;

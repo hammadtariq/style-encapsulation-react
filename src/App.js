@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
+
 import HybridDemo from "./components/HybridDemo";
-import StyledComponentDemo from "./components/StyledComponentDemo";
+import StyledComponentDemo1 from "./components/StyledComponentDemo1";
+import StyledComponentDemo2 from "./components/StyledComponentDemo2";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <HybridDemo />
-        {/* <StyledComponentDemo /> */}
+        {/* <StyledComponentDemo1 /> */}
+        {/* <StyledComponentDemo2 /> */}
       </div>
     );
   }

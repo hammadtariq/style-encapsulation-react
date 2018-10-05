@@ -2,9 +2,52 @@
   text-align: center;
 }
 
-/* #someselector {
-  all: initial;
-  * {
-    all: unset;
+.wrapper {
+  display: grid;
+}
+
+.header {
+  font-size: 16px;
+  background-color: #7b6092;
+  height: 20px;
+  padding: 10px;
+  color: #fff;
+  text-align: "center";
+}
+
+.nav {
+  font-weight: bold;
+  background-color: #b9dbd5;
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    grid-template-columns: 1fr;
   }
-} */
+}
+
+.nav-item {
+  list-style-type: none;
+  display: inline;
+  padding: 20px;
+  text-transform: capitalize;
+}
+
+.nav-item:hover {
+  color: yellow;
+}
+
+.section {
+  text-align: justify;
+  padding: 20px;
+  margin: 20px;
+}
+
+.footer {
+  font-size: 14px;
+  background-color: #93bdb5;
+  height: 20px;
+  padding: 10px;
+}
